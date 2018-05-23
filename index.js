@@ -27,8 +27,9 @@ app.post('/api',(req,res)=>{
                         //"ssml": string,
                         "displayText": "default intent"
                         }
-                     ]
+                     ],
                 }
+            ]
         });
     }
     else{
