@@ -20,22 +20,56 @@ app.post('/api',(req,res)=>{
     if(intent='Default Welome Intent'){
         res.status(200).json({
             
-               // "fulfillmentText": "This is a text response",
-                "fulfillmentMessages": [
-                  {
-                    "card": {
-                      "title": "card title",
-                      "subtitle": "card text",
-                      "imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
-                      "buttons": [
+                "expectUserResponse": true,
+                "isSsml": false,
+                "noInputPrompts": [],
+                "richResponse": {
+                  "items": [
+                    {
+                      "simpleResponse": {
+                        "displayText": "hi",
+                        "textToSpeech": "hello"
+                      }
+                    }
+                  ],
+                  "suggestions": [
+                    {
+                      "title": "Say this"
+                    },
+                    {
+                      "title": "or this"
+                    }
+                  ]
+                },
+                "systemIntent": {
+                  "data": {
+                    "@type": "type.googleapis.com/google.actions.v2.OptionValueSpec",
+                    "listSelect": {
+                      "items": [
                         {
-                          "text": "button text",
-                          "postback": "https://assistant.google.com/"
+                          "optionInfo": {
+                            "key": "key1",
+                            "synonyms": [
+                              "key one"
+                            ]
+                          },
+                          "title": "must not be empty, but unique"
+                        },
+                        {
+                          "optionInfo": {
+                            "key": "key2",
+                            "synonyms": [
+                              "key two"
+                            ]
+                          },
+                          "title": "must not be empty, but unique"
                         }
                       ]
                     }
-                  }
-                ]      
+                  },
+                  "intent": "actions.intent.OPTION"
+                }
+                
         });
     }
     else{
