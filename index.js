@@ -19,55 +19,18 @@ app.post('/api',(req,res)=>{
     console.log(intent);
     if(intent='Default Welome Intent'){
         res.status(200).json({
+            fulfillmentMessages:[
+                {
+                    "text":{
+                        "text":[
+
+                            "hello world"
+                        ]
+                          
             
-          
-                "richResponse": {
-                  "items": [
-                    {
-                      "simpleResponse": {
-                        "displayText": "hi",
-                        "textToSpeech": "hello"
-                      }
                     }
-                  ],
-                  "suggestions": [
-                    {
-                      "title": "Say this"
-                    },
-                    {
-                      "title": "or this"
-                    }
-                  ]
-                },
-                "systemIntent": {
-                  "data": {
-                    "@type": "type.googleapis.com/google.actions.v2.OptionValueSpec",
-                    "listSelect": {
-                      "items": [
-                        {
-                          "optionInfo": {
-                            "key": "key1",
-                            "synonyms": [
-                              "key one"
-                            ]
-                          },
-                          "title": "must not be empty, but unique"
-                        },
-                        {
-                          "optionInfo": {
-                            "key": "key2",
-                            "synonyms": [
-                              "key two"
-                            ]
-                          },
-                          "title": "must not be empty, but unique"
-                        }
-                      ]
-                    }
-                  },
-                  "intent": "actions.intent.OPTION"
                 }
-                
+            ]
         });
     }
     else{
