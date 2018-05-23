@@ -20,9 +20,7 @@ app.post('/api',(req,res)=>{
     if(intent='Default Welome Intent'){
         res.status(200).json({
             
-                "expectUserResponse": true,
-                "isSsml": false,
-                "noInputPrompts": [],
+          
                 "richResponse": {
                   "items": [
                     {
