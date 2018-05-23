@@ -21,16 +21,14 @@ app.post('/api',(req,res)=>{
         res.status(200).json({
             fulfillmentMessages:[
                 {
-                    "text":{
-                        "text":[
-
-                            "hello world"
-                        ]
-                          
-            
-                    }
+                   "simpleResponses": [
+                       {
+                        "textToSpeech": "This is default intent",
+                        //"ssml": string,
+                        "displayText": "default intent"
+                        }
+                     ]
                 }
-            ]
         });
     }
     else{
