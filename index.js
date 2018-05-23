@@ -20,7 +20,7 @@ app.post('/api',(req,res)=>{
     if(intent='Default Welome Intent'){
         res.status(200).json({
             
-                "fulfillmentText": "This is a text response",
+               // "fulfillmentText": "This is a text response",
                 "fulfillmentMessages": [
                   {
                     "card": {
